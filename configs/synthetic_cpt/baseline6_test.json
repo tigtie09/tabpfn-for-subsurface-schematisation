@@ -1,0 +1,29 @@
+{
+  "dataset_id": "synthetic_cpt_baseline6_test4000",
+  "raw_dir": "data/raw",
+  "section_manifest": "configs/synthetic_cpt/raw_sections.csv",
+  "split": "test",
+  "section_order": "relative_path_lexicographic",
+  "output_dir": "data/processed/test",
+  "n_sections": 4000,
+  "section_shape": [
+    32,
+    512,
+    1
+  ],
+  "dtype": "float32",
+  "coordinate_order": [
+    "z",
+    "x",
+    "channel"
+  ],
+  "missing_value": 0.0,
+  "seed": 20232023,
+  "random_generator": "numpy.random.RandomState (MT19937)",
+  "miss_rate": 0.99,
+  "min_distance": 51,
+  "reference_sha256": {
+    "src_images.npy": "5d8adf7b582a404dcba1fc3216befd3068acb352ac732079cba154cd464fe5b0",
+    "tar_images.npy": "7159632eeea0c34a7b519a3a33079686476ba66be51349924925ff59e1352630"
+  }
+}

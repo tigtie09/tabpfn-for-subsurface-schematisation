@@ -1,0 +1,29 @@
+{
+  "dataset_id": "synthetic_cpt_baseline6_vali4000",
+  "raw_dir": "data/raw",
+  "section_manifest": "configs/synthetic_cpt/raw_sections.csv",
+  "split": "vali",
+  "section_order": "relative_path_lexicographic",
+  "output_dir": "data/processed/vali",
+  "n_sections": 4000,
+  "section_shape": [
+    32,
+    512,
+    1
+  ],
+  "dtype": "float32",
+  "coordinate_order": [
+    "z",
+    "x",
+    "channel"
+  ],
+  "missing_value": 0.0,
+  "seed": 20232023,
+  "random_generator": "numpy.random.RandomState (MT19937)",
+  "miss_rate": 0.99,
+  "min_distance": 51,
+  "reference_sha256": {
+    "src_images.npy": "6518bcc15862a85a5a14986c1cb146a5ebb0504769c058cbdcbbcf20f6269949",
+    "tar_images.npy": "e4e7ba8da5f1e07bcff9ca2f64500effd5fe69c614a13c9fb93d9c987c7a68cd"
+  }
+}

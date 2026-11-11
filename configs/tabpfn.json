@@ -1,0 +1,39 @@
+{
+  "model": {
+    "name": "TabPFN v3 default (without fine-tuning)",
+    "path": "models/tabpfn-v3-regressor-v3_default.ckpt",
+    "revision": "24a16a89d245878b846555110985634aa2e656d7",
+    "sha256": "311ce18d97e9533d8585eaadafe040fbdd8070533209ed8696641dadc97a7301"
+  },
+  "inference": {
+    "features": [
+      "x",
+      "z"
+    ],
+    "coordinates": "column_row_pixels",
+    "n_estimators": 8,
+    "random_state": 0,
+    "device": "cuda",
+    "precision": "float32",
+    "fit_mode": "fit_preprocessors",
+    "memory_saving_mode": false,
+    "ignore_pretraining_limits": true,
+    "n_preprocessing_jobs": 1,
+    "softmax_temperature": 0.9,
+    "average_before_softmax": false,
+    "point_prediction": "median",
+    "point_used_for_all_metrics": true,
+    "clip_predictions": false,
+    "overwrite_observations": false,
+    "query_batch": "all_16384_pixels_row_major",
+    "deterministic_algorithms": true
+  },
+  "environment": {
+    "tabpfn": "8.5.0",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.0",
+    "pandas": "3.0.5"
+  }
+}

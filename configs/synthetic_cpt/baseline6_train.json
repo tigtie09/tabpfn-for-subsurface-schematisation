@@ -1,0 +1,29 @@
+{
+  "dataset_id": "synthetic_cpt_baseline6_train16000",
+  "raw_dir": "data/raw",
+  "section_manifest": "configs/synthetic_cpt/raw_sections.csv",
+  "split": "train",
+  "section_order": "relative_path_lexicographic",
+  "output_dir": "data/processed/train",
+  "n_sections": 16000,
+  "section_shape": [
+    32,
+    512,
+    1
+  ],
+  "dtype": "float32",
+  "coordinate_order": [
+    "z",
+    "x",
+    "channel"
+  ],
+  "missing_value": 0.0,
+  "seed": 20232023,
+  "random_generator": "numpy.random.RandomState (MT19937)",
+  "miss_rate": 0.99,
+  "min_distance": 51,
+  "reference_sha256": {
+    "src_images.npy": "8eca902ddc5ba7ff01f496506ac6921afb1f6b2ce8a2930c9b4638dde6a84c96",
+    "tar_images.npy": "6442a33e4bb5bf280342284202a58282c5e648de0b9e7fdd6be430a3c66bfd5a"
+  }
+}

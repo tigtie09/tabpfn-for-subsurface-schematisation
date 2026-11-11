@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript and the original SchemaGAN dataset when using this code."
+title: "TabPFN for Subsurface Schematisation"
+type: software
+repository-code: "https://github.com/tigtie09/tabpfn-for-subsurface-schematisation"
+authors:
+  - family-names: Saito
+    given-names: Taiga
+version: 0.1.0
+license: MIT
+abstract: "Synthetic experiments accompanying Subsurface schematisation from sparse CPT data using the tabular foundation model TabPFN. The MIT licence covers this project's code; external models and outputs retain their own terms."

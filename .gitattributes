@@ -1,0 +1,4 @@
+# Preserve file bytes used by the reproducibility checksums.
+* -text
+# Original example CSVs retain their published CRLF endings and hashes.
+examples/** whitespace=trailing-space,space-before-tab,cr-at-eol

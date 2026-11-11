@@ -1,0 +1,70 @@
+{
+  "seed": 0,
+  "initial_model": "models/tabpfn-v3-regressor-v3_default.ckpt",
+  "initial_model_sha256": "311ce18d97e9533d8585eaadafe040fbdd8070533209ed8696641dadc97a7301",
+  "environment": {
+    "tabpfn": "8.5.0",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.0",
+    "pandas": "3.0.5"
+  },
+  "training": {
+    "n_train": 16000,
+    "n_validation": 4000,
+    "max_epochs": 5,
+    "learning_rate": 1e-05,
+    "weight_decay": 0.01,
+    "warmup_steps": 500,
+    "gradient_clip": 1.0,
+    "query_pixels": 2048,
+    "optimizer": "AdamW",
+    "loss": "CRPS + MSE in the selected context-fitted target-transform space",
+    "update_parameters": "all",
+    "training_estimators": 1,
+    "transform_schedule": "cycle all four checkpoint X/y transform families at step % 4",
+    "query_sampling": "uniform without replacement from unobserved pixels, freshly seeded per step",
+    "amp": true,
+    "checkpoint_every": 2000
+  },
+  "validation": {
+    "every": "each completed epoch, plus the initial model",
+    "n_cases": 4000,
+    "selection_metric": "mean unobserved-pixel MAE across all 4000 validation sections",
+    "selection_candidates": "epochs 1..5; ties choose earliest; also report whether epoch 0 would win",
+    "point": "median",
+    "n_estimators": 8,
+    "random_state": 0,
+    "precision": "float32",
+    "query": "all 16384 pixels",
+    "no_test_or_real_scores_for_selection": true
+  },
+  "inference": {
+    "features": [
+      "x",
+      "z"
+    ],
+    "coordinates": "column_row_pixels",
+    "n_estimators": 8,
+    "random_state": 0,
+    "device": "cuda",
+    "precision": "float32",
+    "fit_mode": "fit_preprocessors",
+    "memory_saving_mode": false,
+    "ignore_pretraining_limits": true,
+    "n_preprocessing_jobs": 1,
+    "softmax_temperature": 0.9,
+    "average_before_softmax": false,
+    "point_prediction": "median",
+    "point_used_for_all_metrics": true,
+    "clip_predictions": false,
+    "overwrite_observations": false,
+    "query_batch": "all_16384_pixels_row_major",
+    "deterministic_algorithms": true
+  },
+  "prepared": {
+    "train": "data/processed/train",
+    "vali": "data/processed/vali"
+  }
+}
